@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/newstock.iml" filepath="$PROJECT_DIR$/newstock.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/newstock.iml" filepath="$PROJECT_DIR$/.idea/modules/newstock.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/newstock_main.iml" filepath="$PROJECT_DIR$/.idea/modules/newstock_main.iml" group="newstock" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/newstock_test.iml" filepath="$PROJECT_DIR$/.idea/modules/newstock_test.iml" group="newstock" />
     </modules>
   </component>
 </project>
