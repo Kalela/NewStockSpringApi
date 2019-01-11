@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
 import java.util.List;
 
 @RestController
@@ -22,7 +23,7 @@ public class UsersController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public String addUser(@RequestBody Users users) {
+    public String addUser(@Valid @RequestBody Users users) {
         userRepository.save(users);
         return users.getUsername() + " Registered Successfully.";
     }
@@ -30,7 +31,8 @@ public class UsersController {
 //    @PostMapping("/login")
 //    public String loginUser(@RequestBody Users users) {
 //        String username = users.getUsername();
-////        userRepository.getOne(username);
+//
+//        userRepository.findByUsername(username);
 //
 //        if (username != null) {
 ////            if (currentUser.getPassword() == users.getPassword()) {
@@ -42,10 +44,10 @@ public class UsersController {
 //        }
 //        return response;
 //    }
-//
-//    @GetMapping("/{id}")
-//    public Users getSingleUser(@PathVariable("id") Long id) {
-//        return userRepository.getOne(id);
-//    }
+
+    @GetMapping("/{id}")
+    public Users getSingleUser(@PathVariable("id") Long id) {
+        return userRepository.getOne(id);
+    }
 
 }
