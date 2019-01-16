@@ -1,11 +1,11 @@
 package com.kalela.newstock.models;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.time.ZonedDateTime;
+import java.util.Date;
 
 @Entity
 @JsonIgnoreProperties({"hibernateLazyInitializer", "handler"})
@@ -17,6 +17,23 @@ public class Stock {
     private String itemName;
     private Integer stockAmount;
     private Float price;
+
+    //TODO: Add date modified functionality
+
+    private Date dateAdded;
+
+    @PrePersist
+    void addTimeStamp() {
+        dateAdded = new Date();
+    }
+
+    public Date getDateAdded() {
+        return dateAdded;
+    }
+
+    public void setDateAdded(Date dateAdded) {
+        this.dateAdded = dateAdded;
+    }
 
     public Long getId() {
         return id;

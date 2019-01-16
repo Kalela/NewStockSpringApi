@@ -1,12 +1,8 @@
 package com.kalela.newstock.models;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Date;
 
 @Entity
@@ -23,8 +19,12 @@ public class Users {
     private String phone;
     private String password;
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "MM-dd-yyyy")
     private Date dateJoined;
+
+    @PrePersist
+    void addTimeStamp() {
+        dateJoined = new Date();
+    }
 
     public String getName() {
         return name;
