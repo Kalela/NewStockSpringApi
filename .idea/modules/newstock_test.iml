@@ -10,8 +10,7 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="module" module-name="newstock_main" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-data-jpa:2.1.1.RELEASE" level="project" />
-    <orderEntry type="library" name="Gradle: org.xerial:sqlite-jdbc:3.8.11.2" level="project" />
-    <orderEntry type="library" name="Gradle: com.zsoltfabok:sqlite-dialect:1.0" level="project" />
+    <orderEntry type="library" name="Gradle: org.postgresql:postgresql:42.2.2" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-web:2.1.1.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-test:2.1.1.RELEASE" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework.boot:spring-boot-starter-aop:2.1.1.RELEASE" level="project" />
