@@ -2,11 +2,14 @@ package com.kalela.newstock.controllers;
 
 import com.kalela.newstock.models.Users;
 import com.kalela.newstock.repositories.UserRepository;
+import org.postgresql.util.PSQLException;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
 import javax.persistence.EntityManager;
+import javax.validation.ConstraintViolationException;
 import javax.validation.Valid;
 import java.util.List;
 
@@ -26,7 +29,13 @@ public class UsersController {
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public String addUser(@Valid @RequestBody Users users) {
-        userRepository.save(users);
+        try {
+            userRepository.save(users);
+        } catch (Exception e) {
+            // TODO: Use better handling of this error
+            return users.getUsername() + " or " + users.getEmail() +
+                    " already in use. Please use a valid username or email.";
+        }
         return users.getUsername() + " Registered Successfully.";
     }
 
