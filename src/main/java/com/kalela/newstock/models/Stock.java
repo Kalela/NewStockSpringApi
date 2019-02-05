@@ -1,10 +1,8 @@
 package com.kalela.newstock.models;
 
-import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 import javax.persistence.*;
-import java.time.ZonedDateTime;
 import java.util.Date;
 
 @Entity
